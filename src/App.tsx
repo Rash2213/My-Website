@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import profileImage from './assets/profile.jpeg';
+import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { 
   Menu, 
   X, 
@@ -60,6 +62,45 @@ function App() {
       tech: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub']
     }
   ];
+
+  // Animation variants for scroll effects
+  const fadeInUp: Variants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
+    }
+  };
+
+  const fadeInLeft: Variants = {
+    hidden: { opacity: 0, x: -60 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
+    }
+  };
+
+  const fadeInRight: Variants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
+    }
+  };
+
+  const staggerContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -172,34 +213,60 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <motion.section 
+        id="about" 
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <motion.div 
+            className="text-center space-y-4 mb-16"
+            variants={fadeInUp}
+          >
             <h2 className="text-4xl font-bold text-gray-900">🎯 Über mich</h2>
-          </div>
+          </motion.div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
+            <motion.div 
+              className="bg-gray-50 rounded-2xl p-8 lg:p-12"
+              variants={fadeInUp}
+            >
               <p className="text-lg text-gray-700 leading-relaxed text-center">
                 Ich bin ein engagierter Informatikstudent mit Leidenschaft für Softwareentwicklung und Webentwicklung. 
                 Mein Fokus liegt auf der Entwicklung innovativer Lösungen, die echten Mehrwert schaffen. Ich bringe 
                 Erfahrung in agilen Teams, Testing, Hardware-Integration sowie Datenanalyse mit und strebe stets nach 
                 technologischer Weiterentwicklung.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gray-50">
+      <motion.section 
+        id="experience" 
+        className="py-20 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInLeft}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <motion.div 
+            className="text-center space-y-4 mb-16"
+            variants={fadeInUp}
+          >
             <h2 className="text-4xl font-bold text-gray-900">💼 Berufserfahrung</h2>
-          </div>
+          </motion.div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+            <motion.div 
+              className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg"
+              variants={fadeInRight}
+            >
               <div className="flex items-start space-x-4 mb-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                   <Briefcase className="w-6 h-6 text-blue-600" />
@@ -232,10 +299,10 @@ function App() {
                   <span>Dokumentation & Datenaufzeichnung (Linux/Windows, Word, Excel)</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Education Section */}
       <section className="py-20 bg-white">
@@ -275,15 +342,31 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50">
+      <motion.section 
+        id="skills" 
+        className="py-20 bg-gray-50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <motion.div 
+            className="text-center space-y-4 mb-16"
+            variants={fadeInUp}
+          >
             <h2 className="text-4xl font-bold text-gray-900">🛠️ Fähigkeiten</h2>
-          </div>
+          </motion.div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+          >
             {/* Programming Languages */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <motion.div 
+              className="bg-white rounded-2xl p-8 shadow-lg"
+              variants={fadeInLeft}
+            >
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                   <Code className="w-6 h-6 text-blue-600" />
@@ -297,10 +380,13 @@ function App() {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
             
             {/* Tools */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <motion.div 
+              className="bg-white rounded-2xl p-8 shadow-lg"
+              variants={fadeInUp}
+            >
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                   <Wrench className="w-6 h-6 text-purple-600" />
@@ -314,10 +400,13 @@ function App() {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
             
             {/* Languages */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <motion.div 
+              className="bg-white rounded-2xl p-8 shadow-lg"
+              variants={fadeInRight}
+            >
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                   <Globe className="w-6 h-6 text-green-600" />
@@ -335,21 +424,34 @@ function App() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white">
+      <motion.section 
+        id="projects" 
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <motion.div 
+            className="text-center space-y-4 mb-16"
+            variants={fadeInUp}
+          >
             <h2 className="text-4xl font-bold text-gray-900">🔬 Projekte</h2>
-          </div>
+          </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+          >
             {projects.map((project, index) => (
-              <div 
+              <motion.div 
                 key={index} 
                 className={`group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
                   project.title.includes('Weather Website') ? 'cursor-pointer' : ''
@@ -359,6 +461,7 @@ function App() {
                     window.open('https://rashweather.netlify.app', '_blank');
                   }
                 }}
+                variants={fadeInUp}
               >
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
@@ -379,11 +482,11 @@ function App() {
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Certificates Section */}
       <section className="py-20 bg-gray-50">
