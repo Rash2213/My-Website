@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   Menu, 
   X, 
   ArrowRight, 
-  Star, 
-  Users, 
-  Zap, 
-  Shield,
-  ChevronDown,
-  Play,
   Mail,
   Phone,
   MapPin,
@@ -20,8 +14,6 @@ import {
   Award,
   Globe,
   Calendar,
-  ExternalLink,
-  Download,
   User,
   Wrench
 } from 'lucide-react';
@@ -182,7 +174,7 @@ function App() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
               <p className="text-lg text-gray-700 leading-relaxed text-center">
-                Ich bin ein engagierter Informatikstudent mit Leidenschaft für Softwareentwicklung und Produktmanagement. 
+                Ich bin ein engagierter Informatikstudent mit Leidenschaft für Softwareentwicklung und Webentwicklung. 
                 Mein Fokus liegt auf der Entwicklung innovativer Lösungen, die echten Mehrwert schaffen. Ich bringe 
                 Erfahrung in agilen Teams, Testing, Hardware-Integration sowie Datenanalyse mit und strebe stets nach 
                 technologischer Weiterentwicklung.
@@ -218,11 +210,11 @@ function App() {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                  <span>Entwicklung von Tools für NFC-Kartenprogrammierung, -Identifikation und -Verifikation (Java, Python, C++)</span>
+                  <span>Entwicklung von Tools für NFC-Kartenprogrammierung, -Identifikation und -Verifikation (Java, Python)</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                  <span>Konvertierung von ECG-Daten in CSV-Dateien (Python, Excel, AI)</span>
+                  <span>Konvertierung von ECG-Daten in CSV-Dateien (Python, Excel, C++)</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
@@ -230,7 +222,7 @@ function App() {
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                  <span>Dokumentation & Datenaufzeichnung mit Word, Terminal (Linux/Windows)</span>
+                  <span>Dokumentation & Datenaufzeichnung (Linux/Windows, Word, Excel)</span>
                 </li>
               </ul>
             </div>
@@ -367,10 +359,6 @@ function App() {
               </div>
             ))}
           </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-lg text-gray-600 mb-4">Rezensionen und Fotos, über 600 Follower</p>
-          </div>
         </div>
       </section>
 
@@ -388,6 +376,8 @@ function App() {
                   <Award className="w-6 h-6 text-yellow-600" />
                 </div>
                 <div>
+                  <h3 className="text-xl font-bold text-gray-900">Abiturzeugnis (auch als Nachweis für Deutsch Niveau C2)</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Immatrikulationsbescheinigung</h3>
                   <h3 className="text-xl font-bold text-gray-900">Zeugnis der Werkstudententätigkeit bei Xenios AG</h3>
                   <p className="text-gray-600">Weitere Nachweise auf Anfrage erhältlich</p>
                 </div>
@@ -439,7 +429,7 @@ function App() {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">Standort</h3>
-                  <p className="text-gray-600">Schickhardtstraße 9<br />Deutschland</p>
+                  <p className="text-gray-600">Schickhardtstraße 9<br />Deutschland<br />Baden Württemberg<br />Tübingen 72072</p>
                 </div>
               </div>
             </div>
@@ -459,14 +449,14 @@ function App() {
             </div>
             
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Informatikstudent mit Leidenschaft für innovative Softwarelösungen und Produktmanagement.
+              Informatikstudent mit Leidenschaft für innovative Softwarelösungen.
             </p>
             
             <div className="flex justify-center space-x-6">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="www.linkedin.com/in/yassein-rashwan" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/Rash2213" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
               </a>
               <a href="mailto:yassinrash7@gmail.com" className="text-gray-400 hover:text-white transition-colors">
