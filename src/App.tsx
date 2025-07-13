@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import profileImage from './assets/profile.jpeg';
 import { 
   Menu, 
   X, 
@@ -154,9 +155,14 @@ function App() {
               <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center">
                 <div className="w-80 h-80 bg-white rounded-full shadow-2xl flex items-center justify-center transform hover:scale-105 transition-transform duration-500 overflow-hidden">
                   <img 
-                    src="/profile.jpeg" 
+                    src={profileImage} 
                     alt="Yassein Rashwan" 
                     className="w-full h-full object-cover rounded-full"
+                    onError={(e) => {
+                      console.log('Image failed to load:', e);
+                      e.currentTarget.style.display = 'none';
+                    }}
+                    onLoad={() => console.log('Image loaded successfully')}
                   />
                 </div>
               </div>
