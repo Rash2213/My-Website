@@ -33,7 +33,7 @@ function App() {
 
   const skills = {
     programming: ['Java', 'Scala', 'Python', 'C++', 'Rust', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL', 'R', 'C', 'C#', 'React', 'NodeJS', 'Cypress', 'LaTeX'],
-    tools: ['Git', 'GitHub', 'Microsoft Word', 'Excel', 'PowerPoint', 'Power BI', 'Outlook', 'Teams', 'SharePoint', 'Copilot'],
+    tools: ['Git', 'GitHub', 'Microsoft Word', 'Excel', 'PowerPoint', 'Outlook', 'Teams', 'SharePoint', 'Copilot', 'ChatGPT', 'Canva', 'Artificial Intelligence', 'Windows', 'Linux', 'macOS', 'Docker'],
     languages: [
       { lang: 'Deutsch', flag: '🇩🇪', level: 'Muttersprache' },
       { lang: 'Englisch', flag: '🇬🇧', level: 'Muttersprache' },
@@ -43,29 +43,29 @@ function App() {
 
   const projects = [
     {
-      title: 'NFC Card Programming Tools',
+      title: 'NFC Card Programming Tools (Werkstudentetätigkeit)',
       description: 'Entwicklung von Tools für Kartenerkennung und -verifikation',
       tech: ['Java', 'Python', 'C++']
     },
     {
-      title: 'ECG Datenkonverter',
+      title: 'ECG Datenkonverter (Werkstudentetätigkeit)',
       description: 'Automatisierte Umwandlung von ECG-Daten in CSV-Format',
       tech: ['Python', 'Excel', 'AI']
     },
     {
-      title: 'ECG Konsolenanzeige',
+      title: 'ECG Konsolenanzeige (Werkstudentetätigkeit)',
       description: 'Visualisierung von ECG-Daten aus Hardware',
       tech: ['Python']
     },
     {
-      title: 'Weather Website API',
-      description: 'Wetter-Webseite mit Cypress-Tests',
-      tech: ['JavaScript', 'HTML', 'CSS', 'Git']
+      title: 'Weather Website (privat)',
+      description: 'einfach Wetter-Webseite mit Fokus auf Testing und API',
+      tech: ['JavaScript', 'HTML', 'CSS', 'Git', 'GitHub', 'Cypress']
     },
     {
-      title: 'Diese Webseite',
+      title: 'Diese Webseite (privat)',
       description: 'Persönliche Portfolio-Website',
-      tech: ['React', 'TypeScript', 'Tailwind CSS']
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub']
     }
   ];
 
@@ -206,7 +206,7 @@ function App() {
                   <Briefcase className="w-6 h-6 text-blue-600" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900">Werkstudent – Softwareentwicklung, Testing & Produktmanagement</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Werkstudent – Software Entwicklung & Testing</h3>
                   <p className="text-blue-600 font-semibold">Xenios AG, Reutlingen</p>
                   <div className="flex items-center space-x-2 text-gray-600 mt-1">
                     <Calendar className="w-4 h-4" />
@@ -230,11 +230,7 @@ function App() {
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                  <span>Produktmanagement mit Microsoft Office, Teams, Outlook, Power BI</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
-                  <span>Dokumentation & Datenaufzeichnung mit Word, Terminal (Linux/Windows), Power BI</span>
+                  <span>Dokumentation & Datenaufzeichnung mit Word, Terminal (Linux/Windows)</span>
                 </li>
               </ul>
             </div>
