@@ -14,7 +14,6 @@ import {
   Award,
   Globe,
   Calendar,
-  User,
   Wrench
 } from 'lucide-react';
 
@@ -118,12 +117,12 @@ function App() {
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Rashwan</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Informatikstudent | Softwareentwickler | Produktmanager
+                  Informatikstudent | Software Entwickler
                 </p>
                 <div className="flex items-center space-x-4 text-gray-600">
                   <div className="flex items-center space-x-2">
                     <MapPin className="w-4 h-4" />
-                    <span>Schickhardtstraße 9, Deutschland</span>
+                    <span>Schickhardtstraße 9, Tübingen</span>
                   </div>
                 </div>
               </div>
@@ -140,11 +139,11 @@ function App() {
               </div>
               
               <div className="flex items-center space-x-6">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://www.linkedin.com/in/yassein-rashwan" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
                   <Linkedin className="w-5 h-5" />
                   <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://github.com/Rash2213" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
                 </a>
@@ -153,10 +152,12 @@ function App() {
             
             <div className="relative">
               <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center">
-                <div className="w-80 h-80 bg-white rounded-full shadow-2xl flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
-                  <div className="w-64 h-64 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                    <User className="w-32 h-32 text-white" />
-                  </div>
+                <div className="w-80 h-80 bg-white rounded-full shadow-2xl flex items-center justify-center transform hover:scale-105 transition-transform duration-500 overflow-hidden">
+                  <img 
+                    src="/profile.jpeg" 
+                    alt="Yassein Rashwan" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
               </div>
             </div>
@@ -342,7 +343,17 @@ function App() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <div 
+                key={index} 
+                className={`group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
+                  project.title.includes('Weather Website') ? 'cursor-pointer' : ''
+                }`}
+                onClick={() => {
+                  if (project.title.includes('Weather Website')) {
+                    window.open('https://rashweather.netlify.app', '_blank');
+                  }
+                }}
+              >
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                     {project.title}
@@ -355,6 +366,12 @@ function App() {
                       </span>
                     ))}
                   </div>
+                  {project.title.includes('Weather Website') && (
+                    <div className="flex items-center space-x-2 text-blue-600 text-sm font-medium">
+                      <Globe className="w-4 h-4" />
+                      <span>Live Demo ansehen</span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
