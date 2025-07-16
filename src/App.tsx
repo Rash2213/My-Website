@@ -52,8 +52,13 @@ function App() {
       tech: ['Python']
     },
     {
+      title: 'SASL-Compiler (Uni Team Projekt)',
+      description: 'Ein Compiler für das SASL-Programmiermodell',
+      tech: ['SASL', 'Scala', 'Git', 'GitHub']
+    },
+    {
       title: 'Weather Website (privat)',
-      description: 'einfach Wetter-Webseite mit Fokus auf Testing und API',
+      description: 'Wetter-Webseite aber Fokus war Testing und API-Nutzung',
       tech: ['JavaScript', 'HTML', 'CSS', 'Git', 'GitHub', 'Cypress']
     },
     {
@@ -454,11 +459,13 @@ function App() {
               <motion.div 
                 key={index} 
                 className={`group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                  project.title.includes('Weather Website') ? 'cursor-pointer' : ''
+                  project.title.includes('Weather Website') || project.title.includes('SASL-Compiler') ? 'cursor-pointer' : ''
                 }`}
                 onClick={() => {
                   if (project.title.includes('Weather Website')) {
                     window.open('https://rashweather.netlify.app', '_blank');
+                  } else if (project.title.includes('SASL-Compiler')) {
+                    window.open('https://github.com/Rash2213/SASL-Compiler.git', '_blank');
                   }
                 }}
                 variants={fadeInUp}
@@ -479,6 +486,12 @@ function App() {
                     <div className="flex items-center space-x-2 text-blue-600 text-sm font-medium">
                       <Globe className="w-4 h-4" />
                       <span>Live Demo ansehen</span>
+                    </div>
+                  )}
+                  {project.title.includes('SASL-Compiler') && (
+                    <div className="flex items-center space-x-2 text-blue-600 text-sm font-medium">
+                      <Github className="w-4 h-4" />
+                      <span>GitHub Repository ansehen</span>
                     </div>
                   )}
                 </div>
