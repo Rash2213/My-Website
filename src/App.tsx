@@ -51,6 +51,12 @@ function App() {
       description: 'Visualisierung von ECG-Daten aus Hardware',
       tech: ['Python']
     },
+  
+    {
+      title: 'SASL-Compiler (Uni Team Projekt)',
+      description: 'Compiler für die SASL-Programmiersprache',
+      tech: ['Scala', 'SASL', 'Git', 'GitHub']
+    },
     {
       title: 'Weather Website (privat)',
       description: 'einfach Wetter-Webseite mit Fokus auf Testing und API',
@@ -454,11 +460,14 @@ function App() {
               <motion.div 
                 key={index} 
                 className={`group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                  project.title.includes('Weather Website') ? 'cursor-pointer' : ''
+                  project.title.includes('Weather Website') || project.title.includes('SASL-Compiler') ? 'cursor-pointer' : ''
                 }`}
                 onClick={() => {
                   if (project.title.includes('Weather Website')) {
                     window.open('https://rashweather.netlify.app', '_blank');
+                  }
+                  if (project.title.includes('SASL-Compiler')) {
+                    window.open('https://github.com/Rash2213/SASL-Compiler.git', '_blank');
                   }
                 }}
                 variants={fadeInUp}
@@ -481,6 +490,12 @@ function App() {
                       <span>Live Demo ansehen</span>
                     </div>
                   )}
+                  {project.title.includes('SASL-Compiler') && (
+                    <div className="flex items-center space-x-2 text-blue-600 text-sm font-medium">
+                      <Github className="w-4 h-4" />
+                      <span>GitHub Repository ansehen</span>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -495,7 +510,7 @@ function App() {
             <h2 className="text-4xl font-bold text-gray-900">📜 Zertifikate & Nachweise</h2>
           </div>
           
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-6">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
@@ -503,7 +518,27 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Abiturzeugnis (auch als Nachweis für Deutsch Niveau C2)</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-yellow-600" />
+                </div>
+                <div>
                   <h3 className="text-xl font-bold text-gray-900">Immatrikulationsbescheinigung</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-yellow-600" />
+                </div>
+                <div>
                   <h3 className="text-xl font-bold text-gray-900">Zeugnis der Werkstudententätigkeit bei Xenios AG</h3>
                   <p className="text-gray-600">Weitere Nachweise auf Anfrage erhältlich</p>
                 </div>
