@@ -17,7 +17,8 @@ import {
   Award,
   Globe,
   Calendar,
-  Wrench
+  Wrench,
+  Download
 } from 'lucide-react';
 
 function App() {
@@ -460,14 +461,14 @@ function App() {
               <motion.div 
                 key={index} 
                 className={`group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                  project.title.includes('Weather Website') || project.title.includes('SASL-Compiler') ? 'cursor-pointer' : ''
+                  project.title.includes('SASL-Compiler') || project.title.includes('Diese Webseite') ? 'cursor-pointer' : ''
                 }`}
                 onClick={() => {
-                  if (project.title.includes('Weather Website')) {
-                    window.open('https://rashweather.netlify.app', '_blank');
-                  }
                   if (project.title.includes('SASL-Compiler')) {
                     window.open('https://github.com/Rash2213/SASL-Compiler.git', '_blank');
+                  }
+                  if (project.title.includes('Diese Webseite')) {
+                    window.open('https://github.com/Rash2213/My-Website.git', '_blank');
                   }
                 }}
                 variants={fadeInUp}
@@ -485,17 +486,42 @@ function App() {
                     ))}
                   </div>
                   {project.title.includes('Weather Website') && (
-                    <div className="flex items-center space-x-2 text-blue-600 text-sm font-medium">
-                      <Globe className="w-4 h-4" />
-                      <span>Live Demo ansehen</span>
+                    <div className="space-y-2">
+                      <div 
+                        className="flex items-center space-x-2 text-blue-600 text-sm font-medium cursor-pointer hover:text-blue-800 transition-colors"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open('https://rashweather.netlify.app', '_blank');
+                        }}
+                      >
+                        <Globe className="w-4 h-4" />
+                        <span>Live Demo ansehen</span>
+                      </div>
+                      <div 
+                        className="flex items-center space-x-2 text-green-600 text-sm font-medium cursor-pointer hover:text-green-800 transition-colors"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open('https://github.com/Rash2213/Weather.git', '_blank');
+                        }}
+                      >
+                        <Github className="w-4 h-4" />
+                        <span>GitHub Repository ansehen</span>
+                      </div>
                     </div>
                   )}
                   {project.title.includes('SASL-Compiler') && (
-                    <div className="flex items-center space-x-2 text-blue-600 text-sm font-medium">
+                    <div className="flex items-center space-x-2 text-green-600 text-sm font-medium">
                       <Github className="w-4 h-4" />
                       <span>GitHub Repository ansehen</span>
                     </div>
                   )}
+                  {project.title.includes('Diese Webseite') && (
+                    <div className="flex items-center space-x-2 text-green-600 text-sm font-medium">
+                      <Github className="w-4 h-4" />
+                      <span>GitHub Repository ansehen</span>
+                    </div>
+                  )}
+                  
                 </div>
               </motion.div>
             ))}
@@ -511,40 +537,46 @@ function App() {
           </div>
           
           <div className="max-w-4xl mx-auto space-y-6">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div 
+              className="bg-white rounded-2xl p-8 shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => window.open('/Abiturzeugnis.pdf', '_blank')}
+            >
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-yellow-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Abiturzeugnis (auch als Nachweis für Deutsch Niveau C2)</h3>
+                  <h3 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">Abiturzeugnis (auch als Nachweis für Deutsch Niveau C2)</h3>
+                  <div className="flex items-center space-x-2 text-blue-600 text-sm font-medium mt-2">
+                    <Download className="w-4 h-4" />
+                    <span>PDF ansehen</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div 
+              className="bg-white rounded-2xl p-8 shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => window.open('/Immatrikulationsbescheinigung.pdf', '_blank')}
+            >
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-yellow-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Immatrikulationsbescheinigung</h3>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
-                  <Award className="w-6 h-6 text-yellow-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900">Zeugnis der Werkstudententätigkeit bei Xenios AG</h3>
-                  <p className="text-gray-600">Weitere Nachweise auf Anfrage erhältlich</p>
+                  <h3 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">Immatrikulationsbescheinigung</h3>
+                  <div className="flex items-center space-x-2 text-blue-600 text-sm font-medium mt-2">
+                    <Download className="w-4 h-4" />
+                    <span>PDF ansehen</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <br/>
+          <p className="text-gray-600">Weitere Nachweise auf Anfrage erhältlich</p>
+          
         </div>
       </section>
 
