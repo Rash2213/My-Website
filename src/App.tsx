@@ -27,8 +27,8 @@ function App() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const skills = {
-    programming: ['Java', 'Scala', 'Python', 'C++', 'Rust', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL', 'R', 'C', 'C#', 'React', 'NodeJS', 'Cypress', 'LaTeX'],
-    tools: ['Git', 'GitHub', 'Microsoft Word', 'Excel', 'PowerPoint', 'Outlook', 'Teams', 'SharePoint', 'Copilot', 'ChatGPT', 'Canva', 'Artificial Intelligence', 'Windows', 'Linux', 'macOS', 'Docker'],
+    programming: ['Java', 'Scala', 'Python', 'C++', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL', 'R', 'C', 'React', 'Cypress'],
+    tools: ['Git', 'GitHub', 'Artificial Intelligence', 'Windows', 'Linux', 'macOS', 'Supabase', 'Clerk'],
     languages: [
       { lang: 'Deutsch', flag: '🇩🇪', level: 'Muttersprache' },
       { lang: 'Englisch', flag: '🇬🇧', level: 'Muttersprache' },
@@ -38,35 +38,19 @@ function App() {
 
   const projects = [
     {
-      title: 'NFC Card Programming Tools (Werkstudentetätigkeit)',
-      description: 'Entwicklung von Tools für Kartenerkennung und -verifikation',
-      tech: ['Java', 'Python', 'C++']
-    },
-    {
-      title: 'ECG Datenkonverter (Werkstudentetätigkeit)',
-      description: 'Automatisierte Umwandlung von ECG-Daten in CSV-Format',
-      tech: ['Python', 'Excel', 'AI']
-    },
-    {
-      title: 'ECG Konsolenanzeige (Werkstudentetätigkeit)',
-      description: 'Visualisierung von ECG-Daten aus Hardware',
-      tech: ['Python']
-    },
-  
-    {
       title: 'SASL-Compiler (Uni Team Projekt)',
       description: 'Compiler für die SASL-Programmiersprache',
       tech: ['Scala', 'SASL', 'Git', 'GitHub']
     },
     {
-      title: 'Weather Website (privat)',
-      description: 'einfach Wetter-Webseite mit Fokus auf Testing und API',
-      tech: ['JavaScript', 'HTML', 'CSS', 'Git', 'GitHub', 'Cypress']
-    },
-    {
-      title: 'Diese Webseite (privat)',
+      title: 'Diese Webseite',
       description: 'Persönliche Portfolio-Website',
       tech: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub']
+    },
+    {
+      title: 'Tour Guide Website',
+      description: 'Webseite für eine ägyptische Reiseführerin mit echten Nutzern weltweit',
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub', 'SQL', 'Supabase', 'Clerk']
     }
   ];
 
@@ -231,9 +215,9 @@ function App() {
               variants={fadeInUp}
             >
               <p className="text-lg text-blue-200 leading-relaxed text-center">
-                Ich bin ein engagierter Informatikstudent mit Leidenschaft für Softwareentwicklung und Webentwicklung. 
+                Ich bin ein engagierter Informatikstudent mit Leidenschaft für Softwareentwicklung. 
                 Mein Fokus liegt auf der Entwicklung innovativer Lösungen, die echten Mehrwert schaffen. Ich bringe 
-                Erfahrung in agilen Teams, Testing, Hardware-Integration sowie Datenanalyse mit und strebe stets nach 
+                Erfahrung in agilen Teams, Testing, Hardware-Integration sowie Internettechnologien mit und strebe stets nach 
                 technologischer Weiterentwicklung.
               </p>
             </motion.div>
@@ -297,6 +281,34 @@ function App() {
               </ul>
             </motion.div>
           </div>
+
+          <div className="max-w-4xl mx-auto mt-8">
+            <motion.div 
+            className="bg-[#101c2c] rounded-2xl p-8 lg:p-12 shadow-lg"
+              variants={fadeInRight}
+            >
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Briefcase className="w-6 h-6 text-blue-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white">Werkstudent – Java Programming & Testing</h3>
+                  <p className="text-blue-400 font-semibold">Allianz Technology, Stuttgart</p>
+                  <div className="flex items-center space-x-2 text-blue-200 mt-1">
+                    <Calendar className="w-4 h-4" />
+                    <span>Okt 2025 – aktuell</span>
+                  </div>
+                </div>
+              </div>
+              
+              <ul className="space-y-3 text-blue-200">
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                  <span></span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
@@ -311,12 +323,12 @@ function App() {
             <div className="bg-[#16213a] rounded-2xl p-8">
               <div className="flex items-start space-x-4 mb-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <GraduationCap className="w-6 h-6 text-blue-600" />
+                  <Award className="w-6 h-6 text-purple-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Bachelor of Science – Informatik</h3>
-                  <p className="text-blue-400 font-semibold">Eberhard Karls Universität Tübingen</p>
-                  <p className="text-blue-200">2023 – aktuell</p>
+                  <h3 className="text-xl font-bold text-white">Abitur</h3>
+                  <p className="text-purple-400 font-semibold">Europa Schule Kairo</p>
+                  <p className="text-blue-200">2023</p>
                 </div>
               </div>
             </div>
@@ -324,12 +336,12 @@ function App() {
             <div className="bg-[#16213a] rounded-2xl p-8">
               <div className="flex items-start space-x-4 mb-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Award className="w-6 h-6 text-purple-600" />
+                  <GraduationCap className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Abitur</h3>
-                  <p className="text-purple-400 font-semibold">Europa Schule Kairo</p>
-                  <p className="text-blue-200">2023</p>
+                  <h3 className="text-xl font-bold text-white">Bachelor of Science – Informatik</h3>
+                  <p className="text-blue-400 font-semibold">Eberhard Karls Universität Tübingen</p>
+                  <p className="text-blue-200">2023 – aktuell</p>
                 </div>
               </div>
             </div>
@@ -450,7 +462,7 @@ function App() {
               <motion.div 
                 key={index} 
                 className={`group bg-[#16213a] rounded-2xl p-6 hover:bg-[#101c2c] hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                  project.title.includes('SASL-Compiler') || project.title.includes('Diese Webseite') ? 'cursor-pointer' : ''
+                  project.title.includes('SASL-Compiler') ? 'cursor-pointer' : ''
                 }`}
                 onClick={() => {
                   if (project.title.includes('SASL-Compiler')) {
@@ -459,6 +471,7 @@ function App() {
                   if (project.title.includes('Diese Webseite')) {
                     window.open('https://github.com/Rash2213/My-Website.git', '_blank');
                   }
+
                 }}
                 variants={fadeInUp}
               >
@@ -474,27 +487,17 @@ function App() {
                       </span>
                     ))}
                   </div>
-                  {project.title.includes('Weather Website') && (
+                  {project.title.includes('Tour Guide Website') && (
                     <div className="space-y-2">
                       <div 
                         className="flex items-center space-x-2 text-blue-400 text-sm font-medium cursor-pointer hover:text-blue-200 transition-colors"
                         onClick={(e) => {
                           e.stopPropagation();
-                          window.open('https://rashweather.netlify.app', '_blank');
+                          window.open('https://daliaibrahim.netlify.app', '_blank');
                         }}
                       >
                         <Globe className="w-4 h-4" />
                         <span>Live Demo ansehen</span>
-                      </div>
-                      <div 
-                        className="flex items-center space-x-2 text-green-400 text-sm font-medium cursor-pointer hover:text-green-200 transition-colors"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.open('https://github.com/Rash2213/Weather.git', '_blank');
-                        }}
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>GitHub Repository ansehen</span>
                       </div>
                     </div>
                   )}
@@ -554,6 +557,24 @@ function App() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white hover:text-blue-400 transition-colors">Immatrikulationsbescheinigung</h3>
+                  <div className="flex items-center space-x-2 text-blue-400 text-sm font-medium mt-2">
+                    <Download className="w-4 h-4" />
+                    <span>PDF ansehen</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              className="bg-[#101c2c] rounded-2xl p-8 shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => window.open('/WS.pdf', '_blank')}
+            >
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-yellow-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white hover:text-blue-400 transition-colors">Nachweis auf Werkstudententätigkeit bei Xenios AG</h3>
                   <div className="flex items-center space-x-2 text-blue-400 text-sm font-medium mt-2">
                     <Download className="w-4 h-4" />
                     <span>PDF ansehen</span>
