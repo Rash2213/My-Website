@@ -29,8 +29,8 @@ function App() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const skills = {
-    programming: ['Java', 'Scala', 'Python', 'C++', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL', 'R', 'C', 'React', 'Cypress'],
-    tools: ['Git', 'GitHub', 'Artificial Intelligence', 'Windows', 'Linux', 'macOS', 'Supabase', 'Clerk'],
+    programming: ['Java', 'Scala', 'Python', 'C++', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL', 'R', 'C', 'Playwright', 'Cypress'],
+    tools: ['Git', 'GitHub', 'Artificial Intelligence', 'Windows', 'Linux', 'macOS'],
     languages: [
       { lang: 'Deutsch', flag: '🇩🇪', level: { de: 'Muttersprache', en: 'Native language' } },
       { lang: 'Englisch', flag: '🇬🇧', level: { de: 'Muttersprache', en: 'Native language' } },
@@ -43,19 +43,19 @@ function App() {
       id: 'sasl',
       title: { de: 'SASL-Compiler (Uni-Teamprojekt)', en: 'SASL Compiler (University Team Project)' },
       description: { de: 'Compiler für die SASL-Programmiersprache', en: 'Compiler for the SASL programming language' },
-      tech: ['Scala', 'SASL', 'Git', 'GitHub']
+      tech: ['Scala', 'SASL']
     },
     {
       id: 'website',
       title: { de: 'Diese Webseite', en: 'This Website' },
       description: { de: 'Persönliche Portfolio-Website', en: 'Personal portfolio website' },
-      tech: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub']
+      tech: ['TypeScript', 'Cypress', 'HTML', 'CSS', 'JavaScript']
     },
     {
       id: 'tour',
       title: { de: 'Tour-Guide-Website', en: 'Tour Guide Website' },
       description: { de: 'Webseite für eine ägyptische Reiseführerin mit echten Nutzern weltweit', en: 'Website for an Egyptian tour guide with real users worldwide' },
-      tech: ['React', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub', 'SQL', 'Supabase', 'Clerk']
+      tech: ['TypeScript', 'Cypress', 'HTML', 'CSS', 'JavaScript']
     }
   ];
 
@@ -64,7 +64,7 @@ function App() {
     greeting: 'Hallo, ich bin', role: 'Informatikstudent | Software Entwickler', address: 'Schickhardtstraße 9, Tübingen',
     contactCta: 'Kontakt aufnehmen', projectsCta: 'Projekte ansehen', aboutTitle: 'Über mich', experienceTitle: 'Berufserfahrung',
     educationTitle: 'Ausbildung', skillsTitle: 'Fähigkeiten', programmingTitle: 'Programmiersprachen & Technologien', toolsTitle: 'Tools & Plattformen',
-    languagesTitle: 'Sprachen', projectsTitle: 'Projekte', certificatesTitle: '📜 Zertifikate & Nachweise', contactTitle: 'Kontakt aufnehmen',
+    languagesTitle: 'Sprachen', projectsTitle: 'Projekte', certificatesTitle: 'Zertifikate & Nachweise', contactTitle: 'Kontakt aufnehmen',
     contactText: 'Lassen Sie uns über spannende Projekte und Möglichkeiten sprechen!', email: 'E-Mail', phone: 'Telefon', location: 'Standort',
     liveDemo: 'Live-Demo ansehen', githubRepo: 'GitHub-Repository ansehen', pdf: 'PDF ansehen', moreProof: 'Weitere Nachweise auf Anfrage erhältlich',
     footerText: 'Informatikstudent mit Leidenschaft für innovative Softwarelösungen.', rights: 'Alle Rechte vorbehalten', present: 'heute', native: 'Muttersprache'
@@ -73,7 +73,7 @@ function App() {
     greeting: 'Hello, I am', role: 'Computer Science Student | Software Engineer', address: 'Schickhardtstraße 9, Tübingen',
     contactCta: 'Get in touch', projectsCta: 'View projects', aboutTitle: 'About me', experienceTitle: 'Work experience',
     educationTitle: 'Education', skillsTitle: 'Skills', programmingTitle: 'Programming Languages & Technologies', toolsTitle: 'Tools & Platforms',
-    languagesTitle: 'Languages', projectsTitle: 'Projects', certificatesTitle: '📜 Certificates & Documents', contactTitle: 'Get in touch',
+    languagesTitle: 'Languages', projectsTitle: 'Projects', certificatesTitle: 'Certificates & Documents', contactTitle: 'Get in touch',
     contactText: 'Let us talk about exciting projects and opportunities!', email: 'Email', phone: 'Phone', location: 'Location',
     liveDemo: 'View live demo', githubRepo: 'View GitHub repository', pdf: 'View PDF', moreProof: 'Additional documents available upon request',
     footerText: 'Computer Science student passionate about innovative software solutions.', rights: 'All rights reserved', present: 'present', native: 'Native language'
